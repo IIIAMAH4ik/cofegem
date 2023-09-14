@@ -1,0 +1,182 @@
+<!DOCTYPE html> <!--получилось рабочие кнопки-->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн магазин</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #795548;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-button {
+            background-color: #8d6e63;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 15px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .header-button:hover {
+            background-color: #6d4c41;
+        }
+        .cart-button {
+            background-color: #8d6e63;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            margin: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cart-button:hover {
+            background-color: #6d4c41;
+        }
+        .material-icons {
+            font-size: 24px;
+        }
+        .container {
+            max-width: 390px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .button-column {
+            flex-basis: calc(50% - 10px);
+            text-align: center;
+        }
+        .layer {
+            display: none;
+        }
+        .active-layer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="button-container">
+            <div class="button-column">
+                <button class="header-button" onclick="showLayer('layer1')">Напитки</button>
+                <button class="header-button" onclick="showLayer('layer2')">Десерты</button>
+            </div>
+            <div class="button-column">
+                <button class="header-button" onclick="showLayer('layer3')">Завтраки</button>
+                <button class="header-button" onclick="showLayer('layer4')">Ланчи</button>
+            </div>
+        </div>
+        <div class="cart-button">
+            <span class="material-icons">shopping_cart</span>
+        </div>
+    </div>
+    <div class="container">
+        <div id="layer1" class="layer active-layer">
+            <h2>Напитки - Товары</h2>
+            <div class="product-container">
+                <div class="product">
+                    <div class="product-left">
+                        <img src="img/2.jpg" alt="Товар 1">
+                    </div>
+                    <div class="product-right">
+                        <h3>Капучино</h3>
+                        <p>Описание товара</p>
+                        <p>Цена: 200 руб.</p>
+                    </div>
+                    <button class="add-button" onclick="showOptions(this)">Добавить</button>
+                    <button class="option-button1" style="display: none;" onclick="showOptions(this)">-</button>
+                    <span class="item-count">0</span>
+                    <button class="option-button2" style="display: none;" onclick="showOptions(this)">+</button>
+                </div>
+                <!-- Добавьте другие товары по аналогии -->
+            </div>
+        </div>
+        <!-- Содержимое слоя 1 -->
+        <div id="layer2" class="layer active-layer">
+            <h2>Десерты - Товары</h2>
+            <div class="product-container">
+                <div class="product">
+                    <div class="product-left">
+                        <img src="img/1.jpeg" alt="Товар 1">
+                    </div>
+                    <div class="product-right">
+                        <h3>Название товара</h3>
+                        <p>Описание товара</p>
+                        <p>Цена: $10</p>
+                    </div>
+                    <button class="add-button">Добавить</button>
+                </div>
+                <!-- Содержимое слоя 2 -->
+            </div>
+        </div>
+        <div id="layer3" class="layer active-layer">
+            <h2>Завтраки - Товары</h2>
+            <div class="product-container">
+                <div class="product">
+                    <div class="product-left">
+                        <img src="img/7.png" alt="Товар 1">
+                    </div>
+                    <div class="product-right">
+                        <h3>Название товара</h3>
+                        <p>Описание товара</p>
+                        <p>Цена: $10</p>
+                    </div>
+                    <button class="add-button">Добавить</button>
+                </div>
+                <!-- Содержимое слоя 3 -->
+            </div>
+        </div>
+        <div id="layer4" class="layer active-layer">
+            <h2>Ланчи - Товары</h2>
+            <div class="product-container">
+                <div class="product">
+                    <div class="product-left">
+                        <img src="img/3.png" alt="Товар 1">
+                    </div>
+                    <div class="product-right">
+                        <h3>Название товара</h3>
+                        <p>Описание товара</p>
+                        <p>Цена: $10</p>
+                    </div>
+                    <button class="add-button">Добавить</button>
+                </div>
+                <!-- Содержимое слоя 4 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLayer(layerId) {
+            // Скрыть все слои
+            const layers = document.querySelectorAll('.layer');
+            layers.forEach(layer => {
+                layer.classList.remove('active-layer');
+            });
+            // Показать выбранный слой
+            const selectedLayer = document.getElementById(layerId);
+            if (selectedLayer) {
+                selectedLayer.classList.add('active-layer');
+            }
+        }
+    </script>
+</body>
+</html>

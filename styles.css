@@ -1,0 +1,108 @@
+.header-button {
+    background-color: #8d6e63;
+    color: #fff;
+    padding: 15px 30px; /* Изменяем размер кнопки */
+    border-radius: 5px; /* Изменяем скругление углов */
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #6d4c41; /* Добавляем рамку с определенными параметрами */
+}
+.header-button:hover {
+    background-color: #6d4c41;
+    color: #fff;
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.product {
+    display: flex;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 379px; /* Устанавливаем ширину */
+    height: 173px; /* Устанавливаем высоту */
+}
+.product-left {
+    flex: 0 0 auto;
+    padding: 10px;
+}
+.product-left img {
+    width: 90px; /* Фиксированная ширина */
+    height: 130px; /* Фиксированная высота */
+    margin-top: 12px; /* Добавляем отступ сверху */
+}
+
+.add-button {
+    background-color: #4caf50;
+    color: #fff;
+    width: 70px; /* Измените на желаемую ширину */
+    height: 140px; /* Измените на желаемую высоту */
+    padding: 12px 5px 13px 5px; /* Отступы: верх, право, низ, лево */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    order: 3;
+    margin-top: 15px; /* Добавляем отступ сверху */
+    margin-right: 10px;
+}
+.product-right {
+    flex: 0 1 40%; /* Уменьшаем ширину блока */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.product-right h3 {
+    font-size: 20px;
+    margin-top: 0;
+    order: 1;
+}
+.product-right p {
+    font-size: 14px;
+    order: 2;
+}
+.add-button:hover {
+    background-color: #45a049;
+}
+/* Стили для кнопки "+" */
+.product .option-button1 {
+    background-color: #FF0000; /* Зеленый цвет */
+    color: #fff; /* Белый цвет текста */
+    width: 30px;
+    height: 55px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 15px; /* Увеличиваем размер шрифта */
+    order: 5; /* Сделать кнопку "+" первой по порядку */
+    margin-top: 97px;
+    margin-right: 5px;
+    display: flex; /* Используем flex-контейнер */
+    justify-content: center; /* Выравниваем по горизонтали по центру */
+    align-items: center; /* Выравниваем по вертикали по центру */
+}
+
+/* Стили для кнопки "-" */
+.product .option-button2 {
+    background-color: #4CAF50; /* Красный цвет */
+    color: #fff; /* Белый цвет текста */
+    width: 30px;
+    height: 55px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 15px; /* Увеличиваем размер шрифта */
+    order: 4; /* Сделать кнопку "-" второй по порядку */
+    margin-top: 97px;
+    margin-right: 5px;
+    display: flex; /* Используем flex-контейнер */
+    justify-content: center; /* Выравниваем по горизонтали по центру */
+    align-items: center; /* Выравниваем по вертикали по центру */
+}
